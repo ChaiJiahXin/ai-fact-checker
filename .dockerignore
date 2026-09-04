@@ -1,0 +1,10 @@
+# 构建上下文排除清单（构建上下文为 v1 根目录）
+__pycache__/
+*.pyc
+.git/
+.gitignore
+venv/
+.env
+example_output/
+docker/
+*.md

@@ -1,0 +1,13 @@
+services:
+  fact-checker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: ai-fact-checker:v1
+    container_name: ai-fact-checker
+    ports:
+      - "8501:8501"
+    environment:
+      # 可选：用环境变量覆盖 app.py 内置的默认 API Key（留空则使用内置默认值）
+      - GONKA_API_KEY=${GONKA_API_KEY:-}
+    restart: unless-stopped
