@@ -82,16 +82,16 @@ DEFAULT_API_KEY = ""
 # Base model list: keep consistent with the real IDs returned by GET {API_BASE_URL}/models
 DEFAULT_MODELS = ["deepseek-ai/DeepSeek-V4-Flash-0731", "moonshotai/Kimi-K2.6","MiniMaxAI/MiniMax-M2.7"]
 
-REQUEST_TIMEOUT = 150.0   # Timeout for a single LLM API request (seconds); after evidence injection the prompt is longer and some models respond slower
+REQUEST_TIMEOUT = 45.0   # Timeout for a single LLM API request (seconds); after evidence injection the prompt is longer and some models respond slower
 DISAGREEMENT_THRESHOLD = 15.0  # Disagreement threshold (mean Euclidean distance): when exceeded, show a high-disagreement warning and launch the Meta-Judge arbiter
 MAX_TOKENS = 3000         # Cap the max tokens of a single reply (must fit the 3-D scores + claims + logic_graph), preventing verbose Markdown from timing out
-FETCH_TIMEOUT = 20.0      # Webpage fetch timeout (seconds)
+FETCH_TIMEOUT = 10.0      # Webpage fetch timeout (seconds)
 MAX_CONTENT_CHARS = 6000  # Max characters of the body sent to the model, to avoid exceeding the context window
 CACHE_TTL = 3600          # Cache duration for webpage fetching and web search results (seconds)
 
 SEARCH_MAX_RESULTS = 6      # Max number of search results used by the web search
 SEARCH_PAGE_FETCH_N = 2     # Number of top results whose bodies are deeply fetched as evidence
-SEARCH_PAGE_TIMEOUT = 20.0  # Timeout for fetching a single search-result page (seconds)
+SEARCH_PAGE_TIMEOUT = 8.0  # Timeout for fetching a single search-result page (seconds)
 SEARCH_SNIPPET_CHARS = 3000 # Max characters of each evidence body excerpt
 
 # The three score dimensions of the matrix consensus engine (matching the JSON fields in the prompt)
